@@ -15,14 +15,14 @@ router.get('/ProductSliderList',ProductCtrl.ProductSliderList);
 router.get('/ProductListByBrand/:BrandID',ProductCtrl.ProductListByBrand);
 router.get('/ProductListByCategory/:CategoryID',ProductCtrl.ProductListByCategory);
 router.get('/ProductListBySimilar/:CategoryID',ProductCtrl.ProductListBySimilar);
-router.get('/ProductListByRemark/:Remark',ProductCtrl.ProductListByRemark);
 router.get('/ProductListByKeyword/:Keyword',ProductCtrl.ProductListByKeyword);
+router.get('/ProductListByRemark/:Remark',ProductCtrl.ProductListByRemark);
 router.get('/ProductReviewList/:ProductID',ProductCtrl.ProductReviewList);
 router.get('/ProductDetail/:ProductID',ProductCtrl.ProductDetail);
 
 
 //User Api
-router.get('/CreateProductReview',UserCtrl.CreateProductReview);
+
 router.get('/UserOTP/:email',UserCtrl.UserOTP);
 router.get('/VerifyLogin/:email/:otp',UserCtrl.VerifyLogin);
 router.get('/UserLogout',AuthVerification,UserCtrl.UserLogout);
@@ -32,16 +32,15 @@ router.get('/ReadProfile',AuthVerification,UserCtrl.ReadProfile);
 
 
 //Wish List Api
-router.get('/WishList',AuthVerification,WishCtrl.WishList);
 router.post('/SaveWishList',AuthVerification,WishCtrl.SaveWishList);
 router.post('/RemoveWishList',AuthVerification,WishCtrl.RemoveWishList);
-
+router.get('/WishList',AuthVerification,WishCtrl.WishList);
 // Cart List Api
-router.get('/CartList',AuthVerification,CartCtrl.CartList);
+
 router.post('/SaveCartList',AuthVerification,CartCtrl.SaveCartList);
 router.post('/UpdateCartList/:cartID',AuthVerification,CartCtrl.UpdateCartList);
 router.post('/RemoveCartList',AuthVerification,CartCtrl.RemoveCartList);
-
+router.get('/CartList',AuthVerification,CartCtrl.CartList);
 
 
 module.exports=router;
